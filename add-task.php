@@ -2,40 +2,6 @@
       // connection to database
       include('config/db_conn.php');
 
-?>
-<html>
-    <head>
-        <title>Tasks manager</title>
-       <style>
-        .h1{
-            color: #000;
-        }
-        .h2{
-            color: #000;
-        }
-        .h3{
-            color: #000;
-        }
-        .h4{
-            color: #000;
-        }
-        .h5{
-            color: #000;
-        }
-        .h{
-            color: #000;
-        }
-       </style>
-    </head>
-
-    <body>
-    </body>
-    
-    <script src="js/script.js"></script>
-</html>
-
-<?php 
-
     if(isset($_POST['submit'])){
 
         $task_name = $_POST['task_name'];

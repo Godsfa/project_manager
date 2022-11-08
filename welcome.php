@@ -83,6 +83,7 @@ $res = mysqli_query($conn, $sql);
   animation: mymove 5s 1;
   background: #AFB0B4;
   background-size: cover;
+  /* border: 2px #AFB0B4; */
   border-radius: var(--radius);
   width: 90%;
   height: 100%;
@@ -113,21 +114,18 @@ $res = mysqli_query($conn, $sql);
   color: var(--clr-red-light);
   transform: scale(1.3);
 }
-table{
-    width: 100%;
-    
+
+.row{
+    box-shadow: 3px 7px 11px -2px rgba(0,0,0,0.75);
+-webkit-box-shadow: 3px 7px 11px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 7px 11px -2px rgba(0,0,0,0.75);
+    width: 70% !important;
+    border: 5px solid #AFB0B4 !important;
+    border-radius: 10px !important;
 }
-td{
-    margin:10px;
-}
-tr{
-    position: relative;
-    top: 40px;
-}
-.btn{
-    position: relative;
-    left: 100%;
-    top: 20px;
+select{
+    width: 100% !important;
+    height: 50px !important;
 }
         </style>
 
@@ -138,107 +136,75 @@ tr{
     <body style="background-color:#AFB0B4 ;">
     <div class="container">
     <h2>Welcome! <span> <?php echo $row['fullname'];?> </span>Or Should I Say <span><?php echo $row['username']; ?>...</span> </h2>
-    <h3>Let's Begin By Creating A Task<span><button class="modal-btn">Create Task</button> </span> Or View Already Created Tasks <span><button class="view"><a href="index.php" style="color: black; text-decoration:none ;">View Tasks</a></button></span></h3>
+    <h3>Let's Begin By Creating A Task<span><button class="modal-btn" style="background-color: #fff;">Create Task</button> </span> Or View Already Created Tasks <span><button class="view"><a href="index.php" style="color: black; text-decoration:none; background-color: #fff;">View Tasks</a></button></span></h3>
 </div>
 
         <div class="modal-overlay">
             <div class="modal-container">      
-            <div class="container" style="border:none; width: 40%;height:70% ;border:2px solid #20bf6b;position: relative;left: 2.5rem;top: 3.8rem;">
-        
-        <form action="add-task.php" method="POST">
-        <div class="icon" style="color:red ;">
-            <button class="close-btn"><i class="fas fa-times"></i></button>
-        </div>
-            <div class="whole">
-            <table class="tbl-half">
-                
-                <tr>
-                    <td>Tasks Name</td>
-                    <td>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="task_name"  placeholder="Type Your Task Name" aria-describedby="addon-wrapping" required>
-                        </div>
-                </td>
-                </tr>
-                
-                <tr>
-                    <td>Task Description</td>
-                    <td>
-                   
-                    <div class="input-group mb-3">
-                <textarea class="form-control" name="task_description" placeholder="Enter Task Description" aria-label="Enter Task Description" required></textarea>
-                </div>
+    
+<form action="add-task.php" method="POST" class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Task Name</label>
+    <input type="text" class="form-control" id="validationCustom01"  name="task_name"  placeholder="Type Your Task Name"  required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Task Description</label>
+    <input type="text" class="form-control" id="validationCustom02" name="task_description"  placeholder="Type Your Task Description"  required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
 
-                </td>
-                </tr>
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">Start Time</label>
+    <div class="input-group has-validation">
+      <input type="datetime-local" class="form-control" name="start_time" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustomUsername" class="form-label">End Time</label>
+    <div class="input-group has-validation">
+      <input type="datetime-local" class="form-control" name="end_time" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+    </div>
+  </div>
+  <div class="col-md-6">
+  <select name="priority" class="form-select" aria-label="Default select example">
+        <option value="high" style=" color: #000;">High</option>
+        <option value="medium" style=" color: #000;">Medium</option>
+        <option value="low" style=" color: #000;">Low</option>
+    </select>
+  </div>
 
-                <tr>
-                    <td>Priority: </td>
-                    <td>
-                        <select name="priority" class="form-select" aria-label="Default select example">
-                            <option value="high" style=" color: #000;">High</option>
-                            <option value="medium" style=" color: #000;">Medium</option>
-                            <option value="low" style=" color: #000;">Low</option>
-                        </select>
-                    </td>
-                </tr>
+  <div class="col-md-6">
+  <select name="employee_id" required class="form-select" aria-label="Default select example">
+        <?php
+        $sql2 = "SELECT * FROM tbl_admin WHERE employee_id != 1";
 
-                <tr>
-                        <td>Start Time: </td>
-			            <td>
-                        <div class="input-group mb-3">
-                        <input type="datetime-local" class="form-control" name="start_time" required aria-describedby="addon-wrapping">
-                        </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>End Time: </td>
-			            <td>
-                        <div class="input-group mb-3">
-                        <input type="datetime-local" class="form-control" name="end_time" required aria-describedby="addon-wrapping">
-                        </div>
-			            </td>
-			        </tr>
-                <tr>
-                    <td>Assign To: </td>
-                    <td>
-                      <select name="employee_id" required class="form-select" aria-label="Default select example">
-                        <?php
-                           $sql2 = "SELECT * FROM tbl_admin WHERE employee_id != 1";
+        $res2 = mysqli_query($conn, $sql2);
 
-                            $res2 = mysqli_query($conn, $sql2);
+        if($res2==true){
+        while($row2 = mysqli_fetch_assoc($res2)){
+        $user_id = $row2['employee_id'];
+        $user_name = $row2['username'];
+        ?> 
+        <option value="<?php echo $user_id; ?>" style=" color: #000;"><?php echo $user_name; ?></option>
+        <?php
+        }
+        }else{
 
-                            if($res2==true){
-                            while($row2 = mysqli_fetch_assoc($res2)){
-                            $user_id = $row2['employee_id'];
-                            $user_name = $row2['username'];
-                            ?> 
-                             <option value="<?php echo $user_id; ?>" style=" color: #000;"><?php echo $user_name; ?></option>
-                                <?php
-                                    }
-                            }else{
-
-                            }
-                            ?>
-                      </select>
-                            </td>
-
-                    </div>
-                   </tr>
-                <tr>
-                    <td>
-                      
-                        <input type="submit" value="Assign Task" name="submit" class="btn btn-outline-success">
-                    </td>
-                </tr>
-               
-            </table>
-         </div>
-        </form>
+        }
+        ?>
+        </select>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" name="submit" type="submit">Add</button>
+  </div>
+</form>
         </div>
     </div>
-    
-    
     <script>
         const modalBtn = document.querySelector('.modal-btn');
 const modalOverlay = document.querySelector('.modal-overlay');
@@ -252,5 +218,9 @@ closeBtn.addEventListener('click', function(){
         modalOverlay.classList.remove('open-modal');
 });
     </script>
+
+    
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </html>
