@@ -30,7 +30,7 @@ $login_id = $_SESSION['login_id'];
     background-repeat: no-repeat;
     background-size: cover;">
   
-  <nav class="navbar navbar-expand-lg bg-light" style="position: relative;bottom:40px;">
+  <nav class="navbar navbar-expand-lg bg-light" style="position: relative;">
   <div class="container-fluid">
     <a class="navbar-brand" href="home.php">Project Manager</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
