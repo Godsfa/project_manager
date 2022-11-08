@@ -2,10 +2,11 @@
 if(isset($_GET['id'])){
     $task_id = $_GET['id'];
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "task_manager";
+
+    $servername = "remotemysql.com";
+    $username = "gvD1EMFgyT";
+    $password = "HdzyThMyaE";
+    $dbname = "gvD1EMFgyT";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -113,7 +114,7 @@ if ($result->num_rows > 0) {
 		    <option value="0" <?php if($rows['status'] == 0){ ?>selected <?php } ?> style="color:#000 ;">Started</option>
 			<option value="1" <?php if($rows['status'] == 1){ ?>selected <?php } ?> style="color:#000 ;">Ongoing</option>
             <option value="2" <?php if($rows['status'] == 2){ ?>selected <?php } ?> style="color:#000 ;">Finished</option>
-            <option value="3" <?php if($rows['status'] == 3){ ?>selected <?php } ?> style="color:#000 ;">Cancelled</option>               
+            <option value="3" <?php if($rows['status'] == 3){ ?>selected <?php } ?> style="color:#000 ;">Canceled</option>               
         </select>
         </td>
     </tr>
@@ -173,10 +174,10 @@ $conn->close();
       $status = $_POST['status'];
       $users = $_POST['employee_id'];
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "task_manager";
+      $servername = "remotemysql.com";
+      $username = "gvD1EMFgyT";
+      $password = "HdzyThMyaE";
+      $dbname = "gvD1EMFgyT";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

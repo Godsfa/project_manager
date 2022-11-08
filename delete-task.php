@@ -9,9 +9,9 @@ $employee_id = $_SESSION['employee_id'];
 $login_id = $_SESSION['login_id'];
 
     //check if the list_id is assigned or not
-    if(isset($_GET['task_id'])){
-        $task_id = $_GET['task_id'];
-        $sql = "DELETE FROM task_tbl WHERE task_id=$task_id";
+    if(isset($_GET['id'])){
+        $task_id = $_GET['id'];
+        $sql = "DELETE FROM task_tbl WHERE id=$task_id";
 
         $res = mysqli_query($conn, $sql);
 

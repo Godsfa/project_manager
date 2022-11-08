@@ -80,7 +80,7 @@ $login_id = $_SESSION['login_id'];
                                     }elseif($row['status'] == 2){
                                     echo "Finished <i class='bi bi-check-lg' style='color:#00af16;'></i>";
                                     }elseif($row['status'] == 3){
-                                    echo "Cancelled <i class='bi bi-x-lg' style='color:red;'></i>";
+                                    echo "Canceled <i class='bi bi-x-lg' style='color:red;'></i>";
                                     }else{
                                     echo "Started <i class='bi bi-chevron-double-right' style='color:chartreuse;'></i>";
                                     } ?>

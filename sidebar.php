@@ -1,4 +1,12 @@
-<!--  -->
+<?php 
+      // connection to database
+      include('config/db_conn.php');
+      include('verify.php');
+    
+$employee_id = $_SESSION['employee_id'];
+
+$login_id = $_SESSION['login_id'];
+?>
 
 <html>
     <head>
@@ -6,6 +14,257 @@
         <link rel="stylesheet" href="css/home_style.css">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+        <style>
+  /*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Open Sans', sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+nav {
+  background: var(--clr-white);
+  box-shadow: var(--light-shadow);
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  color: var(--clr-primary-1);
+  transform: skew(20deg,20deg);
+}
+.logo {
+  height: 40px;
+}
+.links a {
+  color: var(--clr-grey-3);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+.links a:hover {
+  background: var(--clr-primary-8);
+  color: var(--clr-primary-5);
+  padding-left: 1.5rem;
+}
+.social-icons {
+  display: none;
+}
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 10rem;
+}
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .links {
+    height: auto;
+    display: flex;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+  .social-icons {
+    display: flex;
+  }
+  .social-icons a {
+    margin: 0 0.5rem;
+    color: var(--clr-primary-5);
+    transition: var(--transition);
+  }
+  .social-icons a:hover {
+    color: var(--clr-primary-7);
+  }
+}
+
+</style>
     </head>
 
     <body class="body">
@@ -13,41 +272,50 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav">
-        <button class="btn btn-outline-warning pages">
+
+      <button class="nav-toggle" onMouseOver="this.style.border='none'">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <button class="btn btn-outline-warning pages" style=" width:70px; height:40px; background-color: green;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="home.php" style="text-align: center; position:relative;bottom:5px; right: 12px;">Home</a>
         </li>
         </button>
-        <button class="btn btn-outline-warning pages">
+         
+        <button class="btn btn-outline-warning pages" style=" width:90px; height:40px; background-color: green;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="add-task.php">Create New Task</a>
+          <a class="nav-link active" aria-current="page" href="index.php" style="text-align: center; position:relative;bottom:5px; right: 12px;">Explore</a>
         </li>
-        </button>     
-        <button class="btn btn-outline-warning pages">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">View Task</a>
-        </li>
-        </button> 
+        </button>         
+            <?php if($login_id == 1){ ?>
+              <button class="btn btn-outline-warning pages" style=" width:140px; height:40px; background-color: green;">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="administation.php" style="text-align: center; position:relative;bottom:5px; right: 12px;">Administation</a>
+                </li>
+              </button>
+            <?php } ?>       
+            <button class="btn btn-outline-warning pages" style=" width:70px; height:40px;position:relative;left:200px; background-color: green;">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="logout.php" style="text-align: center; position:relative;bottom:5px; right: 12px;">Logout</a>
+            </li>
+            </button>
+            <?php if($login_id == 1){ ?>
+           <button class="btn btn-outline-warning pages" style=" width:70px; height:40px;position:relative;left:200px; background-color: green;">
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="welcome.php" style="text-align: center; position:relative;bottom:35px;"><i class="bi bi-plus" style="color: #000;text-align:center;position:relative;top: 25px; right: 22px; padding: 2px;"></i>New</a>
+            </li>
+          </button>  
+          <?php } ?> 
        
-            <button class="btn btn-outline-warning pages">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="administation.php">Administation</a>
-            </li>
-            </button>
-
-            <button class="btn btn-outline-warning pages">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
-            </li>
-            </button>
-           
-        
         
       </ul>
     </div>
   </div>
 </nav>
-
+    
+<script src="js/script.js"></script>
     </body>
 </html>
