@@ -9,26 +9,23 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];   
 
-    $sql = "SELECT * FROM tbl_admin WHERE username = '$username' && password = '$password' && employee_id = '$employee_id'";
+    $sql = "SELECT * FROM tbl_admin WHERE employee_id = '$employee_id' && password = '$password' && username = '$username'";
 
-    $result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql);
 
-    while($row = mysqli_fetch_assoc($result)){ 
-        $employee_id = $row['employee_id'] ; 
-        $num = mysqli_num_rows($result);
+$num = mysqli_num_rows($result);
 
-    if($num == 1){ 
-        echo '<script>
-    alert("Login Successful")
-    window.location.href="home.php"
-    </script>';
-
-    }else{
+if($num == 1){
     echo '<script>
-    alert("Either Password Or Username Is inccorect")
-    window.location.href="user_login.php"
+    alert("Login Successful")
+    window.location.href = "index.php"
     </script>';
-    } 
+    
+}else{
+    echo '<script>
+        alert("Either Password Or Username Is inccorect")
+        window.location.href = "user_login.php"
+        </script>';
 }
     $sql2 = "SELECT * FROM tbl_admin WHERE employee_id = $employee_id";
     $res2 = mysqli_query($conn, $sql2);
