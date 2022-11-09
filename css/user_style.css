@@ -126,3 +126,30 @@ input{
     border: 3px groove #695210;
     background-color: #695210;
 } 
+@media screen and (max-width:992px) {
+    .wrapper1{
+     width: 300%;
+     position: relative;
+    } 
+ table{
+     border-radius: 3px solid  #0C3B4A;
+     height: 50%;
+ }
+ table tr th{
+     text-align: left;
+     border-bottom:1px solid black ;
+     padding: 1%;
+     padding-top: 5%;
+     font-size: 70px;
+ }
+ table tr td{
+     padding: 1%;
+     font-size: 80px;
+ }
+ i{
+     font-size: 70px;
+ }
+ svg{
+     font-size: 70px;
+ }
+}

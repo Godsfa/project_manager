@@ -53,12 +53,8 @@
     float: none;
     margin: 200px auto;
 }
-.login-left{
-    background: rgba(211, 211, 211, 0.5);
-    padding: 30px;
-}
 .login-right{
-    background:rgb(0, 0, 0);
+
     padding: 30px;
 }
 .btn{
@@ -67,12 +63,54 @@
 }
 .form-control{
     background-color: transparent !important;
+}   
+.container{
+    position: relative;
+    left: 270px !important;
+}
+.login{
+    background:rgb(0, 0, 0);
+}
+@media screen and (max-width:992px) {
+    .container{
+        width: 200% !important;
+    }
+    .login{
+        width: 200% !important;
+       position: relative;
+       top: 150px;
+       border: 10px groove green;
+        border-radius: 10px !important;
+    }
+    form{
+        width: 200% !important;
+    }
+    .form-control{
+        width: 100%;
+        border-radius: 5px;
+        padding: 60px;
+        margin: 8px;
+        font-size: 80px;
+        color: #fff;
+    }
+    .btn{
+        padding: 30px;
+        margin: 10px;
+        font-size: 30px;
+    }
+    label{
+        font-size: 60px;
+    }
+    h2{
+        font-size: 70px;
+    }
 }
 </style>
     </head>
     <body>
-            <div class="container" style="color:#fff;">
-            <div class="login-box"> 
+       
+            <div class="container container-fluid" style="color:#fff;">
+            <div class="login"> 
             <div class="row">
                 <div class="col-md-6 login-right">
                     <h2>Register Here</h2>
@@ -103,8 +141,7 @@
                     <div class="red-text"><?php  echo $errors['password']; ?></div>
                     </div>
                     <div class="form-group">
-                    <label for="">Login ID</label>
-                    <input type="text" name="login_id" class="form-control" value="2" placeholder="Enter 2" required>
+                    <input type="hidden" name="login_id" class="form-control" value="2" placeholder="Enter 2" required>
                     </div>
                     <!-- <div class="form-group">
                     <label for="">Picture</label>
@@ -148,7 +185,7 @@
             </script>';
         }else{
         $sql = "INSERT INTO tbl_admin (fullname,username, email, password, gender,login_id) 
-        VALUES ('$fullname','$username','$email','$password','$gender','$login_id')";
+        VALUES ('$fullname','$username','$email','$password','$gender',2)";
 
         $res = mysqli_query($conn, $sql);
 

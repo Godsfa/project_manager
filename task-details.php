@@ -55,15 +55,65 @@ mysqli_close($conn);
     <head>
         <title>Details</title>
         <link rel="stylesheet" href="css/general_style.css">
+        <style>
+         @media screen and (max-width:992px) {
+       .wrapper1{
+        width: 300% !important;
+        position: relative;
+         right: 70rem !important;
+       } 
+       .container{
+        border:  none;
+        border-radius: 10px;
+        width: 300% !important;
+        position: relative !important;
+        height: 100% !important;
+        width: 70% !important;
+        top: 10px !important;
+       
+       }
+       .table{
+        width:300% !important;
+        border-radius: 3px solid  #0C3B4A !important;
+        height: 50% !important;
+ }
+ table tr th{
+     text-align: left !important;
+     border-bottom:1px solid black  !important;
+     padding: 1% !important;
+     padding-top: 5% !important;
+     font-size: 70px !important;
+ }
+ table tr td{
+     padding: 1%;
+     font-size: 70px !important;
+ }
+    i{
+        font-size: 70px;
+    }
+    svg{
+        font-size: 70px;
+    }
+    .back{
+        font-size: 80px;
+        padding: 40px !important;
+        border:3px solid green !important;
+        background-color: transparent;
+    }
+    .back:hover{
+        background-color: green !important;
+    }
+}
+        </style>
     </head>
 
     <body>
     <?php 
       // connection to database
-      include('sidebar.php');
+      include('sidebar copy.php');
     ?>
         <div class="wrapper1">
-            <div class="container" style=" width: 50%;height:60% ;border:2px solid #20bf6b;position:relative;left: 50px;top: 10px;">
+            <div class="container all">
                 <div class="whole">
                                
                     <div class="edit-text">

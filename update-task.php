@@ -30,6 +30,77 @@ if ($result->num_rows > 0) {
         <link rel="stylesheet" href="css/general_style.css">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <style>
+         @media screen and (max-width:992px) {      
+           .container{
+        border:  none;
+        border-radius: 10px;
+        position: relative !important;
+        height: 100% !important;
+        width: 70% !important;
+        top: 10px !important;
+       
+       }
+       .table{
+        width:300% !important;
+        border-radius: 3px solid  #0C3B4A !important;
+        height: 30% !important;
+ }
+ table tr th{
+     text-align: left !important;
+     border-bottom:1px solid black  !important;
+     padding: 1% !important;
+     padding-top: 5% !important;
+     font-size: 70px !important;
+ }
+ table tr td{
+     padding: 3%;
+     padding-left: 3%;
+     font-size: 50px !important;
+     font-weight: bold !important;
+ }
+    i{
+        font-size: 70px;
+    }
+    svg{
+        font-size: 70px;
+    }
+form{
+  width: 400% !important;
+  position: relative;
+  right: 50% !important;
+}
+.form-control{
+  padding: 30px !important;
+  border: 2px solid black;
+  font-size: 60px !important;
+}
+select{
+  padding: 30px !important;
+  border: 2px solid black;
+  font-size: 60px !important;
+}
+option{
+  font-size: 5px !important;
+}
+.edit-text{
+  width: 200% !important;
+  background-color: transparent;
+}
+.edit{
+  position: relative;
+  right: 100px !important;
+  font-size: 60px !important;
+  color: #000;
+  font-weight: bold;
+}
+.btn{
+  width: 100% !important;
+  padding: 30px !important;
+  font-size: 50px !important;
+}
+}
+        </style>
     </head>
 
     <body>
@@ -50,21 +121,20 @@ if ($result->num_rows > 0) {
     <table class="tbl-half">
 
     <tr>
-    <td>Task ID: </td>
     <div class="input-group flex-nowrap">
-    <td><input type="text" name="task_id" style="color:#000 ;" class="form-control"  aria-describedby="addon-wrapping" value="<?php echo $task_id ?>" required></td>
+    <td><input type="hidden" name="task_id" style="color:#000 ;" class="form-control"  aria-describedby="addon-wrapping" value="<?php echo $task_id ?>" required></td>
     </div>
     </tr>
 
     <tr>
-    <td>Task Name: </td>
+    <td style="color:#000 ;" >Task Name: </td>
     <div class="input-group flex-nowrap">
     <td><input type="text" name="task_name" style="color:#000 ;" class="form-control"  aria-describedby="addon-wrapping" value="<?php echo $rows['task_name']; ?>" required></td>
     </div>
     </tr>
     
     <tr>
-    <td>Task Descripton: </td>
+    <td style="color:#000 ;" >Task Descripton: </td>
     <td>
     <div class="input-group">
     <textarea name="task_description" style="color:#000 ;" class="form-control" required><?php echo $rows['task_description']; ?></textarea>
@@ -73,7 +143,7 @@ if ($result->num_rows > 0) {
     </tr>
 
     <tr>
-      <td>Priority: </td>
+      <td style="color:#000 ;" >Priority: </td>
         <td>
        <select name="priority"  class="form-select" aria-label="Default select example">
 
@@ -93,7 +163,7 @@ if ($result->num_rows > 0) {
     </tr>
 
     <tr>
-        <td>Start Time: </td>
+        <td style="color:#000 ;" >Start Time: </td>
 
         <div class="input-group flex-nowrap">
         <td><input type="datetime-local" name="start_time" style="color:#000 ;" class="form-control" value="<?php echo $rows['start_time']; ?>"></td>
@@ -101,14 +171,14 @@ if ($result->num_rows > 0) {
     </tr>
 
     <tr>
-        <td>End Time: </td>
+        <td style="color:#000 ;" >End Time: </td>
         <div class="input-group flex-nowrap">
         <td><input type="datetime-local" name="end_time" style="color:#000 ;" class="form-control" value="<?php echo $rows['end_time']; ?>"></td>
         </div>
     </tr>
 
     <tr>
-		<td>Status: </td>
+		<td style="color:#000 ;" >Status: </td>
         <td>
         <select class="form-select" aria-label="Default select example" name="status">
 		    <option value="0" <?php if($rows['status'] == 0){ ?>selected <?php } ?> style="color:#000 ;">Started</option>
@@ -120,7 +190,7 @@ if ($result->num_rows > 0) {
     </tr>
 
         <tr>
-            <td>Assign To</td>
+            <td style="color:#000 ;" >Assigned To</td>
             <td>
 
             <?php

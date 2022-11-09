@@ -66,7 +66,7 @@ $res = mysqli_query($conn, $sql);
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: grid;
   place-items: center;
   transition: var(--transition);
@@ -80,8 +80,9 @@ $res = mysqli_query($conn, $sql);
   z-index: 10;
 }
 .modal-container {
+  width: 100%;
   animation: mymove 5s 1;
-  background: #AFB0B4;
+  background: #F0EBF8;
   background-size: cover;
   /* border: 2px #AFB0B4; */
   border-radius: var(--radius);
@@ -127,12 +128,46 @@ select{
     width: 100% !important;
     height: 50px !important;
 }
-        </style>
 
+@media screen and (max-width:992px) {
+  .container{
+    width: 100% !important;
+  }
+  h2{
+    font-size: 40px !important;
+  }
+  h3{
+    font-size: 40px !important;
+  }
+  .row {
+   width: 100% !important;
+   height: 50% !important;
+  }
+  .form-control{
+    width: 100% !important;
+    padding: 20px !important;
+  }
+  label{
+    font-size: 30px !important;
+  }
+  select{
+    width: 100% !important;
+    padding: 20px !important;
+  }
+  .btn{
+    padding: 20px !important;
+    margin: 5px !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+  }
+}
+</style>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 
     </head>
+    <?php include('sidebar.php') ?>
     <body style="background-color:#AFB0B4 ;">
     <div class="container">
     <h2>Welcome! <span> <?php echo $row['fullname'];?> </span>Or Should I Say <span><?php echo $row['username']; ?>...</span> </h2>
@@ -171,6 +206,7 @@ select{
     </div>
   </div>
   <div class="col-md-6">
+  <label for="validationCustom02" class="form-label">Priority</label>
   <select name="priority" class="form-select" aria-label="Default select example">
         <option value="high" style=" color: #000;">High</option>
         <option value="medium" style=" color: #000;">Medium</option>
@@ -179,6 +215,7 @@ select{
   </div>
 
   <div class="col-md-6">
+  <label for="validationCustom02" class="form-label">Assign To</label>
   <select name="employee_id" required class="form-select" aria-label="Default select example">
         <?php
         $sql2 = "SELECT * FROM tbl_admin WHERE employee_id != 1";
@@ -221,6 +258,6 @@ closeBtn.addEventListener('click', function(){
 
     
   <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> -->
     </body>
 </html>

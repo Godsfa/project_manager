@@ -54,15 +54,13 @@ if(isset($_GET['id'])){
         position: relative;
         left: 224.5px;
       }
-      input{
-        color: #fff;
+      .input1{
+        color: #000;
       }
         </style>
     </head>
     <body>
-        <?php 
-            include('sidebar.php');
-          ?>
+       
         <div class="wrapper" style="color:#fff;">
         <nav class="contain1">
               <li class="list1"><a class="nav-content" href="administation.php">Manage Admin</a></li>
@@ -76,19 +74,15 @@ if(isset($_GET['id'])){
                     <label for="">Fullname</label>
                     <a href="user_change_password.php?id=<?php echo $password; ?>" class="change">Change Password</a>
                 <div>
-                    <input type="text" name="fullname" value="<?php echo $fullname; ?>">
+                    <input type="text" name="fullname" class="input1" value="<?php echo $fullname; ?>">
                 </div>
                     <label for="">Username</label>
                 <div>
-                    <input type="text" name="username" value="<?php echo $username; ?>">
+                    <input type="text" name="username" class="input1" value="<?php echo $username; ?>">
                 </div>
                     <label for="">Email</label>
                 <div>
-                    <input type="email" name="email" value="<?php echo $email; ?>">
-                </div>
-                    <label for="">Gender</label>
-                <div>
-                    <input type="text" name="gender" value="<?php echo $gender; ?>">
+                    <input type="email" name="email" class="input1" value="<?php echo $email; ?>">
                 </div>
         
                 <input type="submit" value="Update Now" class="update" name="submit" style="position:relative;left:30rem;bottom:60px;">
@@ -107,9 +101,8 @@ if(isset($_GET['id'])){
         $fullname = $_POST['fullname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $gender = $_POST['gender'];
 
-        $sql3 = "UPDATE `tbl_admin` SET `username`='$username',`fullname`='$fullname',`email`='$email',`gender`='$gender' WHERE employee_id = $id";
+        $sql3 = "UPDATE `tbl_admin` SET `username`='$username',`fullname`='$fullname',`email`='$email' WHERE employee_id = $id";
 
         $res3 = mysqli_query($conn, $sql3);
 

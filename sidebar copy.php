@@ -15,26 +15,29 @@ $login_id = $_SESSION['login_id'];
 <style>
   @media screen and (max-width:992px) {
     .nav-link{
-      font-size: 20px !important;
+      font-size: 50px !important;
     }
     span{
-      font-size: 100px;
+      font-size: 60px !important;
     }
     .container-fluid{
       width: 100% !important;
       font-size: 100% !important;
     }
+    .navbar {
+      width: 100% !important;
+    }
     .active{
-      font-size: 50px !important;
+      font-size: 100px !important;
     }
     .navbar-brand{
-      font-size: 60px !important;
+      font-size: 100px !important;
     }
     .dropdown-toggle{
-      font-size: 60px !important;
+      font-size: 100px !important;
     }
     .dropdown-item{
-      font-size: 60px !important;
+      font-size: 100px !important;
     }
     span{
       font-size: 40px;
@@ -72,7 +75,7 @@ $login_id = $_SESSION['login_id'];
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
             <?php if($login_id == 1){ ?>
-               <li><a class="dropdown-item" href="welcome.php"><i style="color:#000 ;" class="bi bi-plus"></i>New</a></li>
+               <li><a class="dropdown-item" href="welcome.php"><i style="color:#000 ;"  class="bi bi-plus"></i>New</a></li>
             <?php } ?>
            
           </ul>

@@ -39,10 +39,57 @@ $login_id = $_SESSION['login_id'];
         position: relative;
         right: 220px;
       }
+      @media screen and (max-width:992px) {
+        .list1{
+        background-color: #695210  !important;
+        width: 50% !important;
+        height: 120px !important;
+        position: relative !important;
+        right: 80px !important;
+        bottom: 10px !important;
+        text-align: center !important;
+        list-style: none !important;
+        font-size: 0px !important;
+      }
+      .list2{
+        position: relative !important;
+        right: 90px !important;
+        bottom: 10px !important;
+        list-style: none !important;
+      }
+      .nav-content{
+        font-size: 70px !important;
+      }
+      .wrapper{
+     width: 300% !important;
+     position: relative !important;
+    } 
+ table{
+     border-radius: 3px solid  #0C3B4A !important;
+     height: 50% !important;
+ }
+ table tr th{
+     text-align: left !important;
+     border-bottom:1px solid black  !important;
+     padding: 1% !important;
+     padding-top: 5% !important;
+     font-size: 70px !important;
+ }
+ table tr td{
+     padding: 1%;
+     font-size: 70px !important;
+ }
+ i{
+     font-size: 90px !important;
+ }
+ svg{
+     font-size: 40px !important;
+ }
+      }
     </style>
     <body>
         <?php 
-            include('sidebar.php');
+            include('sidebar copy.php');
           ?>
         <div class="wrapper">
             <div class="contain1">
@@ -69,7 +116,7 @@ $login_id = $_SESSION['login_id'];
               <tbody>
 
               <?php 
-                $sql = "SELECT * FROM tbl_admin WHERE login_id = 1";
+                $sql = "SELECT * FROM tbl_admin WHERE employee_id = 1";
 
                 $res = mysqli_query($conn,$sql);
 

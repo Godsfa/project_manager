@@ -12,13 +12,12 @@ body{
     font-family:  Verdana, Geneva, Tahoma, sans-serif;
    
 }
+@media screen and (min-width:800px) {
 .wrapper1{
+    transform: rotate(0deg);
     width:100%;
     margin: 0px auto;
     padding: 2% ;
-    /* position: relative;
-    top: 0%;
-    left: 0px; */
     background-color: #1A1C1D;
 }
 .new_task{
@@ -52,11 +51,19 @@ body{
     background-color: #1A1C1D;
 }
 .container{
-    width: 70%;
+    width: 50%;
     height:92% ;
     border:2px solid #20bf6b;
     position: relative;
     left: 190px;
+    top: 10px;
+}
+.all{
+    width: 50%;
+    height:60% ;
+    border:2px solid #20bf6b;
+    position:relative;
+    left: 50px;
     top: 10px;
 }
 .whole{
@@ -234,4 +241,32 @@ textarea{
 .content:hover{
     background-color: #07485e;
     border-radius: 10px;
+}
+}
+@media screen and (max-width:992px) {
+       .wrapper1{
+        width: 300%;
+        position: relative;
+       } 
+    table{
+        border-radius: 3px solid  #0C3B4A;
+        height: 50%;
+    }
+    table tr th{
+        text-align: left;
+        border-bottom:1px solid black ;
+        padding: 1%;
+        padding-top: 5%;
+        font-size: 70px;
+    }
+    table tr td{
+        padding: 1%;
+        font-size: 70px;
+    }
+    i{
+        font-size: 70px;
+    }
+    svg{
+        font-size: 70px;
+    }
 }
