@@ -20,7 +20,7 @@ $login_id = $_SESSION['login_id'];
 <html>
   <head>
     <style>
-@media screen and (max-width:992px) {
+@media screen and (max-width:1000px) {
  i{
      font-size: 40px !important;
  }

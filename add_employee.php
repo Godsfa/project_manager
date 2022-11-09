@@ -71,7 +71,7 @@
 .login{
     background:rgb(0, 0, 0);
 }
-@media screen and (max-width:992px) {
+@media screen and (max-width:1000px) {
     .container{
         width: 200% !important;
     }

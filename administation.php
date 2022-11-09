@@ -39,7 +39,7 @@ $login_id = $_SESSION['login_id'];
         position: relative;
         right: 220px;
       }
-      @media screen and (max-width:992px) {
+      @media screen and (max-width:1000px) {
         .list1{
         background-color: #695210  !important;
         width: 50% !important;

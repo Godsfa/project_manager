@@ -129,7 +129,7 @@ select{
     height: 50px !important;
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width:100px) {
   .container{
     width: 100% !important;
   }

@@ -30,7 +30,7 @@ a{
     text-decoration: none;
     color: white;
 }
-@media screen and (max-width:992px) {  
+@media screen and (max-width:1000px) {  
 .container{
     width: 200% !important;
     position: relative;

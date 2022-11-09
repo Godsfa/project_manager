@@ -56,7 +56,7 @@ mysqli_close($conn);
         <title>Details</title>
         <link rel="stylesheet" href="css/general_style.css">
         <style>
-         @media screen and (max-width:992px) {
+         @media screen and (max-width:1000px) {
        .wrapper1{
         width: 300% !important;
         position: relative;
