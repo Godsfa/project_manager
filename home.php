@@ -1,22 +1,9 @@
 <?php 
       // connection to database
       include('config/db_conn.php');
-//       include('verify.php');
-    
-// $employee_id = $_SESSION['employee_id'];
 
-// $login_id = $_SESSION['login_id'];
 ?>
-<!-- 
-<?php 
-      // connection to database
-      include('config/db_conn.php');
-      include('verify.php');
-    
-$employee_id = $_SESSION['employee_id'];
 
-$login_id = $_SESSION['login_id'];
-?> -->
 <html>
   <head>
     <style>
@@ -72,26 +59,26 @@ $login_id = $_SESSION['login_id'];
     <link rel="stylesheet" href="css/home_style.css">
 
   </head>
-  <body style="background-image: url('images/back.png'); background-attachment: fixed;
+  <body style="background-image: url('images/back102.jpeg'); background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;">
 
   <?php include('sidebar.php') ?>
-
+<div class="image">
 <div class="container container-fluid">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="h3 text" style="color:black;">PROJECT MANAGEMENT SYSTEM</div>
+            <div class="h3 text" style="color:black; font-family: Times New Roman", Times, serif;">PROJECT MANAGEMENT SYSTEM</div>
             <div class="h4 text" style="color:black;">Making Collaborative Work Esay</div>
-            <div class="h5" style="position: relative; top: 90px; color: black;">Collaborate, plan projects and manage resources with powerful features that your whole team can use</div>
+            <div class="h5" style="position: relative; top: 90px; color: black;font-family: 'Copperplate, Papyrus, fantasy';">Collaborate, plan projects and manage resources with powerful features that your whole team Successful...</div>
             <?php if($login_id == 1){ ?>
                  <button style="color:#000 ;" type="button" class="btn btn-outline-warning get_started"><a href="admin_login.php" class="a" style=" font-weight:bold; color: #000;" >Get Sarted For Free</a></button>
              <?php } ?>  
         </div>
     </div>
 </div>
-
+</div>
         <!-- JavaScript Bundle with Popper -->
     
     </div>

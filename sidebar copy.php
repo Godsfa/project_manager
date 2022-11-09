@@ -31,6 +31,10 @@ $login_id = $_SESSION['login_id'];
     .navbar {
       width: 100% !important;
     }
+    .navbar-toggler{
+      position: relative;
+      left: 190% !important;
+    }
     .active{
       font-size: 100px !important;
     }
@@ -38,13 +42,17 @@ $login_id = $_SESSION['login_id'];
       font-size: 100px !important;
     }
     .dropdown-toggle{
-      font-size: 100px !important;
+      font-size: 100px !important; 
     }
     .dropdown-item{
       font-size: 100px !important;
     }
     span{
-      font-size: 40px;
+      font-size: 40px;  
+    }
+    .span{
+      font-size: 100px !important; 
+      color: #F9004D;
     }
   }
 </style>
@@ -53,7 +61,7 @@ $login_id = $_SESSION['login_id'];
   
   <nav class="navbar navbar-expand-lg bg-light" style="position: relative;bottom:40px;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="home.php">Project Manager</a>
+    <a class="navbar-brand" href="home.php">Project <span class="span"> Manager</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

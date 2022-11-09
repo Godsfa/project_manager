@@ -43,6 +43,10 @@ $login_id = $_SESSION['login_id'];
     span{
       font-size: 40px;
     }
+    .span{
+      font-size: 60px !important; 
+      color: #F9004D;
+    }
   }
 </style>
   </head>
@@ -50,7 +54,7 @@ $login_id = $_SESSION['login_id'];
   
   <nav class="navbar navbar-expand-lg bg-light" style="position: relative;bottom:40px;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="home.php">Project Manager</a>
+  <a class="navbar-brand" href="home.php">Project <span class="span"> Manager</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
