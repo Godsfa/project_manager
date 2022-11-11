@@ -115,6 +115,7 @@ $login_id = $_SESSION['login_id'];
                   <th>username</th>
                   <th>Gender</th>
                   <th>ID</th>
+                  <th>Password</th>
                   <th>Details</th>
                 </tr>
               </thead>
@@ -135,7 +136,7 @@ $login_id = $_SESSION['login_id'];
                     $email = $row['email'];
                     $fullname = $row['fullname'];
                     $gender = $row['gender'];
-                    // $photo = $row['photo'];
+                    $password = $row['password'];
                     
                     ?>
                      <tr class="content">
@@ -145,6 +146,7 @@ $login_id = $_SESSION['login_id'];
                       <td><?php echo $username;?></td>
                       <td><?php echo $gender;?></td>
                       <td><?php echo $employee_id;?></td>
+                      <td><?php echo $password;?></td>
                     <td>
                     <a href="update_user.php?id=<?php echo $employee_id; ?>" class="update_delete"><i class="bi bi-pencil-square"></i></a>
                      

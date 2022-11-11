@@ -166,7 +166,7 @@
         $fullname = $_POST['fullname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $password =  password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $password = $_POST['password'];
         $gender = $_POST['gender'];
         $login_id = $_POST['login_id'];
         // $photo = $_POST['photo'];
